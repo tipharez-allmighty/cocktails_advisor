@@ -18,7 +18,13 @@ async def load_data(file_name: str):
     metadatas = []
     embeddings = []
     ids = []
-
+    
+    existing_documents = await collection.count()
+    if existing_documents > 0:
+        print("Chroma DB already has data. Skipping data loading.")
+        return
+    print("Loading data into Chroma DB...")
+    
     for index, row in df.iterrows():
         cocktail_name = row["name"]
         alcoholic = row["alcoholic"]
