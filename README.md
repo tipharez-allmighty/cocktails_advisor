@@ -12,7 +12,7 @@ This is a FastAPI-based application that provides a chat interface for cocktail 
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/tipharez-allmighty/cocktails_advisor.git
    cd cocktails_app
    
 2. Create a virtual environment and activate it:
