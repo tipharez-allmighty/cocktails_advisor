@@ -17,7 +17,7 @@ async def process_data(file_name: str):
 
 
 def parse_search_result(data: dict):
-    metadata_str = ""
+    result = ""
 
     if "metadatas" in data and "distances" in data:
         metadatas = data["metadatas"][0]
@@ -30,12 +30,12 @@ def parse_search_result(data: dict):
             alcoholic_category = metadata.get("alcoholic_category", "Unknown")
             ingredients = metadata.get("ingredients", "No ingredients available")
 
-            metadata_str += (
+            result += (
                 f"Drink: {name}, Category: {alcoholic_category}, "
                 f"Ingredients: {ingredients}, Distance: {distance}\n"
             )
 
-    return metadata_str
+    return result
 
 
 def parse_chat_history(data: dict):
