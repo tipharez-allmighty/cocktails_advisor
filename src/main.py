@@ -11,6 +11,14 @@ from .schemas import Response
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    """
+    I'm using this lifespan function to load the dataset when the app starts up,
+    so you don't have to do it manually.
+    It makes things easier, especially for testing.
+    However, this approach has its shortcomings, as it makes the startup process slower.
+    But since this is mainly for testing and probably only gets run a couple of times,
+    it seemed like the most convenient way to go.
+    """
     await load_data(settings.DATASET_NAME)
     yield
 
