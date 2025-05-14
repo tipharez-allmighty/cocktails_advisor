@@ -14,7 +14,6 @@ async def handle_response(message: str, client):
     )
     await save_message_to_history(text=message)
     query = format_prompt(message, search_recipes, search_collection_history)
-    print(query)
     response = await generate_async_response(query)
     return response
 
