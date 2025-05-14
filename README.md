@@ -29,11 +29,10 @@ This is a FastAPI-based application that provides a chat interface for cocktail 
    GEMINI_API_KEY=xxx...
 
 5. Running the Application
-Start the ChromaDB server:
-  ```bash
-  chroma run --path ./chroma_db
-
-Run the FastAPI application:
-```bash
-  uvicorn src.main:app --reload
-
+   Start the ChromaDB server:
+     ```bash
+     chroma run --path ./chroma_db
+      ```
+   Run the FastAPI application:
+     ```bash
+     uvicorn src.main:app --reload
