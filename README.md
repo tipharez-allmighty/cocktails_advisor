@@ -1,6 +1,6 @@
 # Cocktails Recommendation App
 
-This is a FastAPI-based application that provides a chat interface for cocktail recommendations. It uses ChromaDB for managing embeddings and metadata.
+This is a FastAPI-based application that provides a chat interface for cocktail recommendations. It uses ChromaDB for managing embeddings and chat history.
 
 ## Prerequisites
 
