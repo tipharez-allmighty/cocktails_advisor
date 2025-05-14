@@ -4,6 +4,7 @@ This is a FastAPI-based application that provides a chat interface for cocktail 
 
 ## API Endpoints
 POST /api/chat: Send a message to the chatbot and receive a response.
+
 GET /: Serve the chat interface.
 
 ## Prerequisites
