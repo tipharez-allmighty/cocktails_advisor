@@ -1,6 +1,5 @@
 import asyncio
 import google.generativeai as genai
-from chromadb.utils import embedding_functions
 from sentence_transformers import SentenceTransformer
 from .config import settings
 
