@@ -2,6 +2,10 @@
 
 This is a FastAPI-based application that provides a chat interface for cocktail recommendations. It uses ChromaDB for managing embeddings and chat history.
 
+## API Endpoints
+POST /api/chat: Send a message to the chatbot and receive a response.
+GET /: Serve the chat interface.
+
 ## Prerequisites
 
 - ChromaDB
@@ -29,6 +33,7 @@ This is a FastAPI-based application that provides a chat interface for cocktail 
    GEMINI_API_KEY=xxx...
 
 5. Running the Application
+   
    Start the ChromaDB server:
      ```bash
      chroma run --path ./chroma_db
