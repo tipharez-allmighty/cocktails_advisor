@@ -21,8 +21,8 @@ async def load_data(file_name: str):
 
     for index, row in df.iterrows():
         cocktail_name = row["name"]
-        alcoholic = row['alcoholic']
-        category = row['category']
+        alcoholic = row["alcoholic"]
+        category = row["category"]
         ingredients = row["ingredients"]
 
         metadata = {
@@ -34,12 +34,12 @@ async def load_data(file_name: str):
 
         embedding_name = await get_embeddings(cocktail_name)
         embedding_ingredients = await get_embeddings(ingredients)
-        
+
         documents.append(cocktail_name)
         metadatas.append(metadata)
         embeddings.append(embedding_name)
         ids.append(f"{index}_name")
-        
+
         documents.append(ingredients)
         metadatas.append(metadata)
         embeddings.append(embedding_ingredients)
@@ -48,16 +48,6 @@ async def load_data(file_name: str):
     await collection.upsert(
         documents=documents, metadatas=metadatas, embeddings=embeddings, ids=ids
     )
-
-
-async def parse_message_history(data: dict):
-    messages_str = ""
-    if "documents" in data:
-        documents = data["documents"][0]
-
-        for doc in documents:
-            messages_str += f"Message: {doc}\n"
-    return messages_str
 
 
 async def save_message_to_history(text: str):
